@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".f2").click(function() {
+                $(this).fadeOut();
+                $(this).next('.f1').delay(375).fadeIn();
+            });
+            $(".f1").click(function() {
+                $(this).fadeOut();
+                $(this).prev('.f2').delay(375).fadeIn();
+            });
+        });
+
+        function PopUp() {
+            document.getElementById('ac-wrapper').style.display = "none";
+        }
+
+    </script>
+    <style>
+        html {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .topPic {
+
+            background-color: gray;
+            max-height: 600px;
+            border: none;
+
+        }
+
+        @media screen and (max-width: 660px) {
+
+            .topPic {
+
+                background-color: gray;
+                max-height: 250px;
+                border: none;
+
+            }
+
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            --background-grad: linear-gradient(to bottom right, #001d5a, #0037aa);
+            background: var(--background-grad);
+
+            font-family: 'Helvetica', sans-serif;
+            font-size: 112.5%;
+            line-height: 1.6em;
+        }
+
+        p {
+            color: black;
+            font-weight: 600;
+            text-align: justify;
+        }
+
+        h1 {}
+
+        .timeline {
+            position: relative;
+            width: 660px;
+            margin: 0 auto;
+            margin-top: -15px;
+            padding: 1em 0;
+            list-style-type: none;
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            content: ' ';
+            display: block;
+            width: 6px;
+            height: 100%;
+            margin-left: -3px;
+            background: rgb(255, 255, 255);
+            background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 8%, rgb(255, 255, 255) 92%, rgba(255, 255, 255, 0) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 87, 153, 1)), color-stop(100%, rgba(125, 185, 232, 1)));
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 8%, rgb(255, 255, 255) 92%, rgba(255, 255, 255, 0) 100%);
+            background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 8%, rgb(255, 255, 255) 92%, rgba(255, 255, 255, 0) 100%);
+            background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 8%, rgb(255, 255, 255) 92%, rgba(255, 255, 255, 0) 100%);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 8%, rgb(255, 255, 255) 92%, rgba(255, 255, 255, 0) 100%);
+
+            z-index: 0;
+        }
+
+        .timeline li {
+            padding: 1em 0;
+        }
+
+        .timeline li:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .direction-l {
+            position: relative;
+            width: 300px;
+            float: left;
+            text-align: right;
+        }
+
+        .direction-r {
+            position: relative;
+            width: 300px;
+            float: right;
+        }
+
+        .flag-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: default;
+            text-align: center;
+        }
+
+        .flag {
+            position: relative;
+            display: inline;
+            background: rgb(248, 248, 248);
+            padding: 6px 40px;
+            border-radius: 5px;
+            cursor: default;
+            font-weight: 900;
+            text-align: left;
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE10+/Edge */
+            user-select: none;
+            /* Standard */
+        }
+
+        .direction-l .flag {
+            -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+            box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+        }
+
+        .direction-r .flag {
+            -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+        }
+
+        .direction-l .flag:before,
+        .direction-r .flag:before {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            content: ' ';
+            display: block;
+            width: 12px;
+            height: 12px;
+            margin-top: -10px;
+            background: #fff;
+            border-radius: 10px;
+            border: 4px solid #ff8800;
+            cursor: default;
+            z-index: 10;
+        }
+
+        .direction-r .flag:before {
+            left: -40px;
+        }
+
+        .direction-l .flag:after {
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            height: 0;
+            width: 0;
+            margin-top: -8px;
+            border: solid transparent;
+            border-left-color: rgb(248, 248, 248);
+            border-width: 8px;
+            pointer-events: none;
+        }
+
+        .direction-r .flag:after {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            height: 0;
+            width: 0;
+            margin-top: -8px;
+            border: solid transparent;
+            border-right-color: rgb(248, 248, 248);
+            border-width: 8px;
+            pointer-events: none;
+        }
+
+        .time-wrapper {
+            display: inline;
+
+            line-height: 1em;
+            font-size: 0.66666em;
+            color: rgb(0, 0, 0);
+            vertical-align: middle;
+        }
+
+        .direction-l .time-wrapper {
+            float: left;
+        }
+
+        .direction-r .time-wrapper {
+            float: right;
+        }
+
+        .time {
+            display: inline-block;
+            padding: 4px 6px;
+            background: rgb(248, 248, 248);
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE10+/Edge */
+            user-select: none;
+            /* Standard */
+
+        }
+
+        .desc {
+            margin: 1em 0.75em 0 0;
+
+            font-size: 0.77777em;
+            font-style: italic;
+            color: #ff8800;
+            line-height: 1.5em;
+            display: none;
+        }
+
+        .direction-r .desc {
+            margin: 1em 0 0 0.75em;
+        }
+
+        @media screen and (max-width: 1200px) {
+
+            .timeline {
+                width: 100%;
+                padding: 1em 0 1em 0;
+            }
+
+            .timeline li {
+                padding: 3em 0;
+            }
+
+            .direction-l,
+            .direction-r {
+                float: none;
+                width: 100%;
+
+                text-align: center;
+            }
+
+            .flag-wrapper {
+                text-align: center;
+            }
+
+            .flag {
+                background: #fffS;
+                z-index: 15;
+            }
+
+            .direction-l .flag:before,
+            .direction-r .flag:before {
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                content: ' ';
+                display: block;
+                width: 12px;
+                height: 12px;
+                margin-left: -9px;
+                background: #fff;
+                border-radius: 10px;
+                border: 4px solid black;
+                border-color: darkorange;
+                z-index: 10;
+            }
+
+            .direction-l .flag:after,
+            .direction-r .flag:after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: -8px;
+                height: 0;
+                width: 0;
+                margin-left: -8px;
+                border: 4px solid transparent;
+                border-bottom-color: #fff;
+                border-width: 8px;
+                pointer-events: none;
+            }
+
+            .time-wrapper {
+                display: block;
+                position: relative;
+                margin: 3.5px 0 0 0;
+                z-index: 14;
+                font-weight: 600;
+            }
+
+            .direction-l .time-wrapper {
+                float: none;
+            }
+
+            .direction-r .time-wrapper {
+                float: none;
+            }
+
+            .desc {
+                position: relative;
+                margin: 1em 0 0 0;
+                padding: 1em;
+                background: rgb(245, 245, 245);
+                -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+                -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0.20);
+
+                z-index: 15;
+            }
+
+            .direction-l .desc,
+            .direction-r .desc {
+                position: relative;
+                margin: 1em 1em 0 1em;
+                padding: 1em;
+
+                z-index: 15;
+            }
+
+        }
+
+        @media screen and (min-width: 400px ?? max-width: 1200px) {
+
+            .direction-l .desc,
+            .direction-r .desc {
+                margin: 1em 4em 0 4em;
+            }
+
+        }
+
+        .f2 {
+            position: relative;
+            margin: -0.5em 0.5em -1em 0;
+
+            padding: 1em;
+            z-index: 15;
+            display: block;
+        }
+
+        .f2 img {
+            margin: 0.75em 0.5em -1em 0;
+            height: 250px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .heading h1 {
+
+            font-family: Helvetica, sans-serif;
+            text-align: center;
+            font-variant-caps: all-small-caps;
+            color: #e0e0e0;
+        }
+
+        .heading hr {
+            position: relative;
+            top: -12px;
+            width: 90%;
+            border-color: #FF8800;
+            height: 1px;
+            color: #FF8800;
+            background-color: #FF8800;
+        }
+
+        .footer1 {
+            z-index: 900;
+            background-color: #2f3539;
+            border-top: 1px solid #393f43;
+            padding: 1px;
+            font-weight: 300;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .footer1 p {
+            font-size: 16px;
+            color: #cecece;
+            text-align: center;
+        }
+
+        ul.footer_social {
+            max-width: 1140px;
+            display: block;
+            margin: 0 auto;
+            margin-left: -45px;
+            padding-top: 5px;
+        }
+
+        ul.footer_social li {
+            display: inline-block;
+            margin: 0;
+            line-height: 100% !important;
+        }
+
+        ul.footer_social li a i {
+            display: inline-block;
+            margin: 0 8px;
+            padding: 0;
+            font-size: 26px !important;
+            line-height: 26px !important;
+            color: #8d8d8d;
+
+            transition: all .5s ease-in-out;
+            -moz-transition: all .25s ease-in-out;
+            -webkit-transition: all .25s ease-in-out;
+        }
+
+        ul.footer_social li a i:hover {
+            color: #4285f4;
+        }
+
+        .col-md-12 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .container1 {
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-bottom: 10px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        #endnote {
+            color: #C0C0C0;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 10px;
+            font-family: Helvetica, sans-serif;
+            opacity: .7;
+            font-weight: 300;
+            line-height: 16px;
+        }
+
+        #subnote {
+            margin-left: 10%;
+            font-size: 10px;
+        }
+
+        .photoRow {
+            max-height: 300px;
+        }
+
+        .photoGalleryL {
+            max-width: 45%;
+            max-height: 300px;
+            position: relative;
+            border: 5px solid black;
+            right: 5px;
+        }
+
+        .photoGalleryR {
+            max-width: 45%;
+            max-height: 300px;
+            position: relative;
+            border: 5px solid black;
+            left: 5px;
+        }
+
+        .caption {
+            width: 100%;
+
+        }
+
+        .infoL {
+            width: 48%;
+            text-align: center;
+
+        }
+
+        .infoR {
+            width: 50%;
+            right: 5%;
+            text-align: center;
+
+        }
+
+        #ac-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            z-index: 1001;
+        }
+
+        #popup {
+            height: 400px;
+            background: var(--background-grad);
+            border: 2px solid #ff8800;
+            border-radius: 25px;
+            -moz-border-radius: 25px;
+            -webkit-border-radius: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50%;
+            width: 70%;
+            color: aliceblue;
+        }
+
+        #popup input {
+            width: 100px;
+            position: relative;
+            top: -10px;
+            background: white;
+            border: 2px solid transparent;
+            color: #001d59;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        #popup p {
+            position: relative;
+            text-align: center;
+            color: aliceblue;
+            font-size: 13px;
+            line-height: 20px;
+            font-weight: 500;
+            margin-top: -5px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 25px;
+        }
+
+        #popup h1 {
+            text-align: center;
+            color: aliceblue;
+            font-weight: 500;
+            font-variant-caps: all-small-caps;
+            font-size: 32px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+
+        #popup hr {
+            position: relative;
+            top: -10px;
+            border: 1.5px solid #ff8800;
+            width: 55%;
+        }
+
+        .formbutton p {
+            position: relative;
+            top: 5px;
+            font-size: 12px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .formbutton a {
+            background: var(--background-grad);
+            border: none;
+            display: block;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40px;
+            width: 150px;
+            border-radius: 5px;
+        }
+
+        .cost {
+            position: relative;
+            max-width: 300px;
+            max-height: 450px;
+        }
+
+        h6 {
+            color: black;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+
+
+        .lightbox {
+            /** Default lightbox to hidden */
+            display: none;
+
+            /** Position and style */
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox img {
+            /** Pad the lightbox image */
+            max-width: 90%;
+            max-height: 80%;
+            margin-top: 2%;
+        }
+
+        .lightbox:target {
+            /** Remove default browser outline */
+            outline: none;
+
+            /** Unhide lightbox **/
+            display: block;
+        }
+        
+        .center {
+            position: relative;
+            display: block;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 20px;
+        }
+        
+        .formhead h1 {
+            text-align: center;
+            color: aliceblue;
+            font-weight: 500;
+            font-variant-caps: all-small-caps;
+            font-size: 32px;
+            line-height: 20px;
+        }
+        
+        .formhead hr {
+            position: relative;
+            top: -10px;
+            border: 1.5px solid #ff8800;
+            width: 70%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <img src="images/floodwall-open-door.jpg" layout="responsive" class="topPic" height="100%" width="100%"></img>
+
+        <div id="ac-wrapper">
+            <div id="popup">
+                <center>
+                    <h1>Attention</h1>
+                    <hr>
+                    <p>
+                        This product is a work in progress created by Rewind Kentucky, a company founded by students of Marshall County High School.
+                        <br><br>
+                        We would appreciate it if you would fill out the quick 30 second survey at the end of the page and provide your thoughts and opinions on the product so we can make it better.
+                        <br><br>
+                        Click on any photo in the timeline to view more information.
+
+                    </p>
+                    <input type="submit" name="submit" value="Okay" onClick="PopUp()" />
+                </center>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="heading">
+        <h1>Paducah Wall to Wall</h1>
+        <hr class="hLine">
+    </div>
+
+    <ul class="timeline">
+
+        <li>
+            <div class="direction-r">
+                <div class="flag-wrapper">
+                    <span class="flag">1913 Flood</span>
+                    <span class="time-wrapper">
+                    </span>
+                </div>
+                <div class="f2">
+                    <img src="images/1913flood.jpg"></img>
+                </div>
+                <div class="desc f1">
+                    <h1>
+                        Quick Facts:
+                    </h1>
+                    <p> -During the 1913 flood, Paducah citizens watched in horror as the water overtook Louisville and continued to rise in their own town at a rate of 2 feet per day.
+                    </p>
+                    <p>
+                        -Before the water rose to critical levels, local bankers and government officials announced that Paducah would pay for its own recovery efforts and would not require the funds of outside agencies.
+                        -The crest of the flood was 54.3 feet -- one-tenth higher than that of 1884.
+                    </p>
+                    <p>
+                        -Local newspapers bragged that <q>Paducahans didn&#39;t let this flood bother them any more than Paducahans of 1884 were bothered by that river rampage.</q>
+                    </p>
+                    <p>
+                        -Thankfully, the city was prepared and escaped any significant damage. The end total cost of recovery was $6,000, which was paid by local funds.
+                    </p>
+                    <p>
+                        -Many took their boats out onto the water for joy rides during the height of the flood.
+                    </p>
+                    <h1> Photo Gallery </h1>
+                    <br>
+                    <div class="photoRow">
+                        <img src="images/flood5.png" class="photoGalleryL"></img>
+                        <img src="images/1913flood1.jpg" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>During the 1913 flood, people were relatively unbothered by the rising waters and never imagined how bad it could get. </h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>View of Broadway Street during the 1913 flood in front of the Kozy theatre.
+                                </h6>
+                            </th>
+                        </tr>
+                    </table>
+                    <div class="photoRow">
+                        <img src="images/1913flood2.jpg" class="photoGalleryL"></img>
+                        <img src="images/1913flood3.jpg" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>Some drivers took the risk of attempting to drive through the deep, raging water in 1913.</h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>The street car service downtown wasn&#39;t interrupted by the 1913 flood, but citizens were forced to walk through several inches of water.
+                                </h6>
+                            </th>
+                        </tr>
+                    </table>
+                    <div class="photoRow">
+                        <img src="images/1913flood4.jpg" class="photoGalleryL"></img>
+                        <img src="images/1913flood5.jpg" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>The city market (now Market House Theatre) was completely flooded in 1913.</h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>The 1913 flood attracted crowds of people to the business district. Trolly tracks and brick streets are also visible in the image.</h6>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="direction-l">
+                <div class="flag-wrapper">
+                    <span class="flag">1937 Flood</span>
+                    <span class="time-wrapper">
+                    </span>
+                </div>
+                <div class="f2">
+                    <img src="images/1937flood.jpg"></img>
+                </div>
+                <div class="desc f1">
+                    <h1>
+                        Quick Facts:
+                    </h1>
+                    <p>
+                        -<q>The Red Cross noted that this natural disaster was bigger than the other two biggest disasters in recorded history in North America combined the Dust Bowl and the 1927 Mississippi River flood.</q>
+                    </p>
+                    <p>
+                        -The previous high water mark set in 1913 was surpassed by six-and-a-half feet. The crest on February 2 measured 60.8 feet.
+                    </p>
+                    <p>
+                        -Conditions were worsened by winter weather
+                    </p>
+                    <p>
+                        -During the height of the flood, several buildings caught fire as the Fire Department looked on, helpless to stop it. Authorities evacuated the community during severe weather -- mostly due to the threat of illnesses like pneumonia and typhoid -- and military units were called in to assist.
+
+                    </p>
+                    <p>
+                        -Segregation was strictly maintained even during evacuation and recovery.
+                    </p>
+                    <p>
+                        -The recovery efforts were difficult and slow due to the weather and the severing of communication between Paducah and the outside world.
+
+                    </p>
+                    <p>
+                        -Bodies began appearing as the waters fell.
+                    </p>
+                    <p>
+                        -Paducah&#39;s business sector and population were devastated. Community growth came to a standstill until the construction of the floodwall.
+                    </p>
+                    <h1>
+                        Personal 1937 Flood Stories:
+                    </h1>
+                    <h3>
+                        Ann Anderson Freeman and Dorothy Anderson Conner:
+                    </h3>
+                    <p>
+                        During evacuation, their family&#39;s boat capsized. Ann, wrapped in blankets, began to float away and nearly drowned before a man jumped out of his own boat to save her. The sisters&#39; visiting great grandmother, Addie Schiff, died in the struggle.
+                    </p>
+                    <p>
+                        <q>This is something that mother and daddy never talked about,</q> says Conner. <q>We never talked about the flood and how terrible it was. They didn&#39;t have anything to say about it.</q> Now, says Freeman, <q> We don&#39;t really have anything to pass on to anybody else because we don&#39;t know that much about it.</q>
+                    </p>
+                    <h3>
+                        Rev. Robert M. Anderson
+                    </h3>
+                    <p>
+                        Anderson was 17 when the flood occured and took shelter in a school. He was then evacuated to Princeton, Kentucky. The mayor of Princeton complained about the number of black refugees entering the city, so all of the black people in the group were transported by train to Knoxville, Tennessee. Guards were posted at the doors, and the refugees were not allowed to leave. After more than 2 weeks, people were returned to Paducah by train.
+                    </p>
+                    <p>
+                        <q>We would eat, but that&#39;s all we would do&hyphen;set up in that building, couldn&#39;t get out, couldn&#39;t go no place. They had a guard on the door.</q>
+                    </p>
+                    <p>
+                        <q>I learned [from the flood] that anything could happen at any time.You&#39;re not safe no place.</q>
+                    </p>
+                    <h1> Photo Gallery </h1>
+                    <br>
+                    <div class="photoRow">
+                        <img src="images/flood1.png" class="photoGalleryL"></img>
+                        <img src="images/flood2.png" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>View of Broadway from the Irvin Cobb Hotel featuring Broadway United Methodist Church at the height of the 1937 flood.</h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6> Paducah citizens and military personnel carried out countless rescue missions during the flood. In this image from 1937, people are being saved from second floor windows.</h6>
+                            </th>
+                        </tr>
+                    </table>
+                    <div class="photoRow">
+                        <img src="images/flood3.png" class="photoGalleryL"></img>
+                        <img src="images/flood4.png" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>The areas of western Kentucky affected by the 1937 flood of the Ohio River.</h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>An eastern view of Broadway during the flood, capturing the bank clock that was the center of the downtown shopping area. </h6>
+                            </th>
+                        </tr>
+                    </table>
+                    <div class="photoRow">
+                        <img src="images/1937flood1.jpg" class="photoGalleryL"></img>
+                        <img src="images/1937flood3.jpg" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>During the 1937 flood, the first floor of Citizens Bank was inundated. This area in particular was treacherous for small boats because of the force of the running water and its freezing temperature.</h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>The photograph was taken from the top of the Cobb Hotel and shows a boat floating at the entrance of the Guthrie Building in front of St. Francis de Sales Catholic church. </h6>
+                            </th>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="direction-r">
+                <div class="flag-wrapper">
+                    <span class="flag">Floodwall Contruction and Delay</span>
+                    <span class="time-wrapper">
+                        <span class="time">August 28, 1937</span>
+                    </span>
+                </div>
+                <div class="f2">
+                    <img src="images/construction1.png"></img>
+                </div>
+                <div class="desc f1">
+                    <h1>
+                        Quick Facts:
+                    </h1>
+                    <p>
+                        -The Flood Control Act was approved on August 28, 1937 by President Franklin Delano Roosevelt in response to the major flooding of the previous year leading up to the <q>Super Flood</q> of the Ohio River that swept Paducah.
+                    </p>
+                    <p id="subnote">
+                        -This act approved funds of over $25 million in order to build floodwalls, levees, and revetments.
+                    </p>
+                    <p id="subnote">
+                        -Paducah assured its cooperation with the act on May 2, 1938.
+                    </p>
+                    <p>
+                        -Construction lasted from August 1939 through July 1949.
+                    </p>
+                    <p id="subnote">
+                        -Progress was delayed by World War II.
+                    </p>
+                    <p>
+                        -In January of 1950 a flood was prevented by the newly completed flood wall.
+                    </p>
+                    <p>
+                        -The part of the wall we see is 3 miles long (15,870 feet of concrete), but the entire structure is over 12 miles.
+                    </p>
+                    <h1> Photo Gallery </h1>
+                    <br>
+                    <div class="photoRow">
+                        <img src="images/area.jpg" class="photoGalleryL"></img>
+                        <img src="images/construction2.png" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>The floodwall protects a large section of McCracken County from the rising Ohio River. </h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>A view of Broadway during construction of the floodwall. This image depicts backfilling operations of an intercepting sewer in 1942. </h6>
+                            </th>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    <div class="photoRow">
+                        <img src="images/construction3.png" class="photoGalleryL"></img>
+                        <img src="images/construction4.png" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>Discharge pipes during installation in January of 1942.
+                                </h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>View of a finished pumping plant in 1942. </h6>
+                            </th>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="direction-l">
+                <div class="flag-wrapper">
+                    <span class="flag">Maintenance and Restoration</span>
+                </div>
+                <div class="f2">
+                    <img src="images/restoration2.jpg"></img>
+                </div>
+                <div class="desc f1">
+                    <h1> Quick Facts: </h1>
+                    <p>
+                        -The Paducah Flood Protection Project is tasked with the upkeep of the wall.
+                    </p>
+                    <p>
+                        -In 1998, Congressman Whitfield requested $100,000 to conduct a study in order to determine if the restoration of the wall met federal requirements.
+                    </p>
+                    <p id="subnote">
+                        -This study was completed in May 2000, and the total estimated cost of construction was $5.2 million.
+                    </p>
+                    <p id="subnote">
+                        -Unfortunately, the money was tied up in bureaucracy and the legal definitions of “restoration” and “maintenance” were debated until 2005.
+                    </p>
+                    <p>
+                        -In 2006 after Hurricane Katrina hit, Paducah&#39;s floodwall was rated as <q>Minimally Acceptable</q> by USACE Louisville District.
+                    </p>
+                    <p id="subnote">
+                        -The restoration project was unavoidable if the floodwall was going to continue in its current functions. However, government red tape blocked the money for years.
+                    </p>
+                    <p>
+                        -In December 2009 a preliminary restoration project was completed in order to secure federal funding for the rest of the project.
+                    </p>
+                    <p>
+                        -Restoration efforts are still ongoing and finding funding has been difficult.
+                    </p>
+                    <p id="subnote">
+                        -In 2017 Senate Majority Leader Mitch McConnell announced that additional funding was being provided for restoration of the floodwall.
+                    </p>
+                    <h1> The Cost </h1>
+                    <img src="images/maintenance1.png" class="cost"></img>
+                    <h1> Photo Gallery </h1>
+                    <br>
+                    <div class="photoRow">
+                        <img src="images/restoration1.jpg" class="photoGalleryR"></img>
+                    </div>
+                    <h6 align="center">Corrugated Metal Pipe (CMP) restoration and rehabilitation project in the mid 2000s.</h6>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="direction-l">
+                <div class="flag-wrapper">
+                    <span class="flag">Murals</span>
+                </div>
+                <div class="f2">
+                    <img src="images/mural1.jpg"></img>
+                </div>
+                <div class="desc f1">
+                    <h1> Quick Facts: </h1>
+                    <p>
+                        -The giant murals painted on the floodwall were created by Robert Dafford, a muralist from Lafayette, Louisiana, and the Dafford Murals Team.
+                    </p>
+                    <p id="subnote">
+                        -They worked from the late 1990s to the early 2000s to complete the paintings.
+                    </p>
+                    <p>
+                        -The murals receive touch-ups from Dafford and his team every year or so to keep them looking new.
+                    </p>
+                    <p>
+                        -Each mural depicts a scene from Paducah&#39;s history from pre-Colonial times to the 1950s and adds a bit of whimsy to what would otherwise be a plain concrete wall.
+                    </p>
+                    <h1> Photo Gallery </h1>
+                    <br>
+                    <div class="photoRow">
+                        <img src="images/mural2.jpg" class="photoGalleryL"></img>
+                        <img src="images/mural3.jpg" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>This hand-painted map shows Paducah’s layout in 1873.</h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>Mural of Columbia Theatre on Broadway Street. </h6>
+                            </th>
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                    <div class="photoRow">
+                        <img src="images/mural4.jpg" class="photoGalleryL"></img>
+                        <img src="images/mural6.jpg" class="photoGalleryR"></img>
+                    </div>
+                    <table class="caption" align="center">
+                        <tr>
+                            <th class="infoL" align="left" valign="top">
+                                <h6>Group swimming in the Ohio River.</h6>
+                            </th>
+                            <th class="infoR" valign="top">
+                                <h6>Paducah was home of USEC, a gaseous diffusion plant, and gave the city the nickname of “The Atomic City.”</h6>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    
+    <center class="formhead">
+        <h1>Submit Your Feedback</h1>
+        <hr>
+    </center>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdEimFYP4cGTdV74DpN253TGejC6W7wMF7Euwye3eT-kVnf1w/viewform?embedded=true" width="400" height="400" frameborder="0" marginheight="0" marginwidth="0" class="center">Loading...</iframe>
+
+    <div class="footer1">
+        <div class="formbutton">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6B1RvympB3LqpW5ErNzenyoUU5T9wN7lgnC_qtpsnXaAilQ/viewform?usp=sf_link" role="button">
+                <p>Submit Feedback</p>
+            </a>
+        </div>
+
+        <!--begin container -->
+        <div class="container1">
+
+            <!--begin row -->
+            <div class="row">
+
+                <!--begin col-md-12 -->
+                <div class="col-md-12 text-center">
+
+                    <!--begin copyright -->
+                    <div class="copyright">
+                        <p>Copyright &copy; 2018 Rewind Kentucky</p>
+
+                    </div>
+                    <!--end copyright -->
+
+                    <!--begin footer_social-->
+                    <ul class="footer_social">
+
+                        <li>
+                            <a href="index.html">
+                                <i class="fa fa-arrow-left"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/RewindKentucky/">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/rewindkentucky/?hl=en">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ContactEmail.html">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!--end footer_social -->
+
+                </div>
+                <!--end col-md-6 -->
+
+            </div>
+            <!--end row -->
+
+        </div>
+        <!--end container -->
+        <p id="endnote">Disclaimer: Rewind Kentucky does not claim or attempt to present ownership of any of the pictures or information used in this document. It is meerly a sample of our products and uses borrowed public information and pictures.</p>
+
+    </div>
+    <!--end footer -->
+
+</body>
+
+</html>

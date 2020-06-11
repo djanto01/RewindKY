@@ -1,0 +1,195 @@
+<!doctype html>
+<html amp lang="en">
+
+  <head>
+  	<title>Kentucky Dam QR</title>
+
+	<script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js">
+	</script>
+	<script 
+	async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">
+	</script>
+	<script 
+	async custom-element="amp-iframe"
+	src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js">
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/digital-profiles-css.css">
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+    <link rel="canonical" href="https://ampbyexample.com/advanced/image_galleries_with_amp-carousel/">
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+ {
+   "@context": "http://schema.org",
+   "@type": "NewsArticle",
+   "headline": "Open-source framework for publishing content",
+   "datePublished": "2015-10-07T12:02:41Z",
+   "image": [
+"logo.jpg"
+   ]
+ }
+    </script>
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+</head>
+
+  <body class="body">
+   
+    <amp-img  src="images/Top-KY-Dam.jpg" 
+    layout="responsive"
+    on="tap:lightbox1"   
+    class="topPic" 
+    alt="Smiley Face" 
+    height="1" 
+    width="1">
+    </amp-img>
+    <br>
+
+
+<h1>Kentucky Dam</h1>
+
+<hr id="photo1">
+
+ <p style="text-align:justify"> 
+   <div class="pText1">
+   Kentucky Dam creates the largest manmade lake in the eastern United States. It backs up the Tennessee River for 184 miles and creates a lake that stretches south across the western tip of Kentucky and nearly the entire width of Tennessee. At maximum normal operating level, Kentucky Lake covers 160,300 acres. More important than the project's size are the jobs it performs. Kentucky Dam is the spigot that TVA (Tennessee Valley Authority) uses to help control floods on the lower Ohio and Mississippi rivers; it is the gateway to the Tennessee River waterway and is a major generating plant in the TVA power system.
+   </div>
+ </p>
+
+ <p style="text-align:justify">
+    <div class="pText1"> 
+    The 1937 Flood - The Ohio Valley Flood of 1937 was the greatest natural disaster in the history of the U.S. and drove over one million citizens from their homes. When the Ohio River reached its crest in Paducah on Feb. 2, 1937, the water stood at 60.8 feet. Over 90 per cent of the city was inundated, 27,000 people were evacuated, and damage exceeded $22,000,000.
+    </div>
+ </p>
+
+ <p style="text-align:justify"> 
+    <b>Construction</b>
+    <div class="pText2">
+    The huge job of building Kentucky Dam took six years from the start of construction on July 1, 1938, until the reservoir began filling on August 30, 1944. At the peak of construction TVA had nearly 5,000 men at work building the dam and preparing the reservoir area. The dam, which is more than a mile long and rises 206 feet above its foundation, required 1,356,000 cubic yards of concrete and 5,582,000 cubic yards of earth and rockfill. The project cost about $118 million. 
+    </div>
+ </p>
+
+    <br>
+    <br>
+    <br>
+
+ <h2> Photo Gallery </h2>
+ <hr id="photo">
+
+<amp-carousel class="collapsible-captions" height="332" layout="fixed-height" type="slides">
+    <figure >
+      <div class="fixed-height-container" >
+        <amp-img layout="fill" src="images/Top-Left-Dam.png" ></amp-img>
+      </div>
+      <figcaption on="tap:AMP.setState({expanded: !expanded})" tabindex="0" role="button" [class]="expanded ? 'expanded' : ''"><b>Water Gates</b> <br><br>This is a photo of Kentucky Dam with several of its powerful water gates open. These are opened to allow water from Kentucky Lake flow into the Tennesse River. This can be for many reasons, most common of which is high water levels being reported in the lake.
+        <span [text]="expanded ? '&#9660;' : '&#9650;'">&#9650;</span>
+      </figcaption>
+    </figure>
+    <figure>
+      <div class="fixed-height-container">
+        <amp-img layout="fill" src="images/Top-Center-Dam.jpg"></amp-img>
+      </div>
+      <figcaption on="tap:AMP.setState({expanded: !expanded})" tabindex="0" role="button" [class]="expanded ? 'expanded' : ''"><b>View From Fishing Area</b><br><br>This is a photo of the view of the dam when you are standing at one of many popular fishing areas.
+        <span [text]="expanded ? '&#9660;' : '&#9650;'">&#9650;</span></figcaption>
+    </figure>
+    <figure>
+      <div class="fixed-height-container">
+        <amp-img layout="fill" src="images/Top-Right-Dam.jpg"></amp-img>
+      </div>
+      <figcaption on="tap:AMP.setState({expanded: !expanded})" tabindex="0" role="button" [class]="expanded ? 'expanded' : ''"><b>Early TVA Construction</b><br><br>This is a photo of Kentucky Dam during early construction around the times of the formation of the TVA, or Tennesse Valley Association, which built many dams similar to this one and much more.
+        <span [text]="expanded ? '&#9660;' : '&#9650;'">&#9650;</span></figcaption>
+    </figure>
+  </amp-carousel>
+    
+    <br>
+    <br>
+    <br>
+
+    <h2>
+      Map
+    </h2>
+    <hr id="photo">
+<amp-iframe width="1" height="1"
+    sandbox="allow-scripts allow-same-origin"
+    layout="responsive"
+    class="map1"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1413.6874833310812!2d-88.27020551268436!3d37.01300166457466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x887a6696e9e633b7%3A0x67d526a29e31ff12!2sKentucky+Dam%2C+Gilbertsville%2C+KY+42044!5e0!3m2!1sen!2sus!4v1548914236497"
+    frameborder="0" 
+    style="border:0">
+</amp-iframe>
+
+    <br>
+    <br>
+    <br>
+
+  <div class="footer">
+
+        <!--begin container -->
+        <div class="container">
+
+            <!--begin row -->
+            <div class="row">
+
+                <!--begin col-md-12 -->
+                <div class="col-md-12 text-center">
+
+                    <!--begin copyright -->
+                    <div class="copyright">
+                        <p>Copyright © 2018 RewindKY</p>
+
+                    </div>
+                    <!--end copyright -->
+
+                    <!--begin footer_social-->
+                    <ul class="footer_social">
+
+                    	<li>
+                            <a href="index.html">
+                                <i class="fa fa-arrow-left"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/RewindKentucky/">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/rewindkentucky/?hl=en">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ContactEmail.html">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!--end footer_social -->
+
+                </div>
+                <!--end col-md-6 -->
+
+            </div>
+            <!--end row -->
+
+        </div>
+        
+        <br>
+        <!--end container -->
+        <p id="endnote">Disclaimer: RewindKentucky does not claim or attempt to present ownership of any of the pictures or information used in this document. It is meerly a sample of our products and uses borrowed public information and pictures.</p>
+
+    </div>
+    <!--end footer -->
+
+  </body>
+</html>
